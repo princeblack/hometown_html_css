@@ -1,0 +1,452 @@
+/*************************************************************************
+*****************                                          ***************
+*****************    HERE IS THE Nav manu style CUSTOMIZED ***************
+*****************                                          ***************
+**************************************************************************/
+.home-title{
+    font-size: 20px;
+}
+.nav-toggle {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+  }
+  
+  .nav-toggle:focus ~ .nav-toggle-label {
+    outline: 3px solid rgba(lightblue, .75);
+  }
+  
+  .nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+  }
+  
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+  }
+  
+  .nav-toggle-label span::before {
+    bottom: 7px;
+  }
+  
+  .nav-toggle-label span::after {
+    top: 7px;
+  }
+
+  
+  nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background:  rgba(247,178,178);
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+  }
+  
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+  nav a:hover {
+    color: #000;
+  }
+  
+  .nav-toggle:checked ~ nav {
+    transform: scale(1,1);
+  }
+  
+  .nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+  }
+  @media screen and (min-width: 900px) {
+    .nav-toggle-label {
+      display: block;
+    }
+  
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
+    
+    .logo {
+      grid-column: 2 / 3;
+    }
+    
+    nav {
+      all: unset; 
+      /* this causes issues with Edge, since it's unsupported */
+      
+      /* the following lines are not from my video, but add Edge support */
+      position: relative;
+      text-align: left;
+      transition: none;
+      transform: scale(1,1);
+      background: none;
+      top: initial;
+      left: initial;
+      /* end Edge support stuff */
+      
+      grid-column: 3 / 4;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    
+    nav ul {
+      display: flex;
+    }
+    
+    nav li {
+      margin-left: 3em;
+      margin-bottom: 0;
+    }
+    
+    nav a {
+      opacity: 1;
+      position: relative;
+    }
+    
+    nav a::before {
+      content: '';
+      display: block;
+      height: 5px;
+      background: black;
+      position: absolute;
+      top: -.75em;
+      left: 0;
+      right: 0;
+      transform: scale(0, 1);
+      transition: transform ease-in-out 250ms;
+    }
+    
+    nav a:hover::before {
+      transform: scale(1,1);
+    }
+  }
+  
+   /*************************************************************************
+ *****************                                          ***************
+ *****************HERE THE home top image style CUSTOMIZED  ***************
+ *****************                                          ***************
+ **************************************************************************/
+     
+ #section1{
+     clear: both;
+    width: 100%;
+}
+
+img.home-image{
+    clear: both;
+    width: 70%;
+    margin-left: 15%;
+    top: 10%;
+}
+.city{
+    clear: both;
+    position: absolute;
+    font-size: 5em;        
+    margin-left: 35%;
+    top: 35%;
+    color: aliceblue !important;
+    
+
+}
+
+/*************************************************************************
+*****************                                          ***************
+***************** HERE THE history section style CUSTOMIZED***************
+*****************                                          ***************
+**************************************************************************/
+.history-start{
+    clear: both;
+    margin-top: 150px;
+}
+#section2{
+
+    margin-top: 50px;
+}
+h2{
+    font-size: 40px;
+    font-family: 'VT323', monospace;
+    color: aliceblue;
+}
+
+.masque{
+    width: 45%;
+    border: outset;
+    border-radius: 15px;  
+    float: left; 
+    margin-right: 20px;
+    
+}
+
+.text-ouaga{
+    width: 50%;    
+    overflow: auto;   
+    color:black;
+    font-size: 21px;    
+    background-color: rgba(255,255,255,0.6);
+}
+.text-ouaga p{
+    font-family: 'Open Sans', sans-serif;
+    text-align: start;
+}
+.read-more-state {
+    display: none;
+  }
+  .read-more-target {
+    opacity: 0;
+    max-height: 0;
+    font-size: 0;
+    transition: .25s ease;
+  }
+  .read-more-state:checked ~ .read-more-wrap .read-more-target {
+    opacity: 1;
+    font-size: inherit;
+    max-height: 999em;
+  }
+  .read-more-state ~ .read-more-trigger:before {
+    content: 'Show more';
+  }
+  .read-more-state:checked ~ .read-more-trigger:before {
+    content: 'Show less';
+  }
+  .read-more-trigger {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 .5em;
+    color: #666;
+    background-color: rgba(247,178,178);
+    font-size: .9em;
+    line-height: 2;
+    border: 1px solid #ddd;
+    border-radius: .25em;
+     
+  }
+/*************************************************************************
+*****************                                          ***************
+***************** HERE THE location section style CUSTOMIZED *************
+*****************                                          ***************
+**************************************************************************/
+.location-start{
+    margin-top: 150px;
+    clear: both;
+}
+.section3{
+    margin-top: 50px;
+   
+}
+.carte{
+    width: 90%;
+    margin-left: 50px;     
+}
+/*************************************************************************
+*****************                                          ***************
+***************** HERE THE image section style CUSTOMIZED  ***************
+*****************                                          ***************
+**************************************************************************/
+
+
+.image-title{
+    margin-top: 5%;
+    width: 100%;
+}
+#image_block{
+    margin-top: 10%;
+    width:100%;
+}
+.contenar{
+    width:100%;
+}
+.contenar div{
+    float: right;
+    width:20%;
+    border:groove;
+    
+    
+}
+.contenar div img{
+    width:100%;
+    height:150px;
+}
+.contenar2{
+    width:100%;
+    
+}
+.contenar2 div{
+    float: right;
+    width:20%;
+    border: groove;
+}
+.contenar2 div img{
+    width:100%;
+    height:150px;
+}
+hr{
+    display: none;
+}
+
+/*************************************************************************
+*****************                                          ***************
+***************** HERE THE Sights style CUSTOMIZED         ***************
+*****************                                          ***************
+**************************************************************************/
+.sights-title{
+    clear: both;
+    margin-top: 10%;
+    width: 100%;
+    
+}
+#Sights{
+    width:100%;
+    margin-top: 10%;
+    
+}
+.contenar3{
+    width:100%;
+    height: 400px;
+    background-color: rgba(255,255,255,0.6);
+}
+.contenar3 div{
+    float: right;
+    width:30%;
+    margin: 1%;
+    margin-left: 2%;
+}
+.contenar3 div p{
+    font-family:'Monoton', cursive;
+    font-size: 100%;
+}
+.contenar3 div img{
+    width:100%;
+    height: 300px;
+    
+}
+
+
+/*************************************************************************
+*****************                                          ***************
+***************** HERE THE footer style CUSTOMIZED         ***************
+*****************                                          ***************
+**************************************************************************/
+footer{
+    margin-top: 5%;
+}
+
+footer p{
+    color: aliceblue;
+}
+footer p{
+    margin-left: 40%;
+}
+/*************************************************************************
+*****************                                          ***************
+*****************             Sights image animation       ***************
+*****************                                          ***************
+**************************************************************************/
+
+#Sights div img{
+    animation: shake 2.5s linear forwards infinite ;
+    transform: translate(100% 100% 100% 100%);
+
+
+}
+#Sights div img::before,
+#Sights div img::after {
+    width: 90%;
+    height:100%;
+} 
+#Sights div img::before {
+    animation: crack1 2.5s linear forwards;
+    -webkit-clip-path: polygon(0% 0%, 10% 0%, 55% 100%, 0% 100%);
+            clip-path: polygon(0% 0%, 10% 0%, 55% 100%, 0% 100%);
+}
+
+#Sights div img::after {
+    animation: crack2 2.5s linear forwards;
+    -webkit-clip-path: polygon(44% 0%, 100% 0%, 100% 100%, 70% 100%);
+            clip-path: polygon(44% 0%, 100% 0%, 100% 100%, 70% 100%);
+}
+@keyframes shake {
+    5%, 15%, 25%, 35%, 55%, 65%, 75%, 95% {
+        filter: blur(0.018em);
+        transform: translateY(0.018em) rotate(0deg);
+    }
+
+    10%, 30%, 40%, 50%, 70%, 80%, 90% {
+        filter: blur(0.01em);
+        transform: translateY(-0.018em) rotate(0deg);
+    }
+
+    20%, 60% {
+        filter: blur(0.03em);
+        transform: translate(-0.018em, 0.018em) rotate(0deg);
+    }
+
+    45%, 85% {
+        filter: blur(0.03em);
+        transform: translate(0.018em, -0.018em) rotate(0deg);
+    }
+
+    100% {
+        filter: blur(0.007em);
+        transform: translate(0) rotate(-0.5deg);
+    }
+}
+
+@keyframes crack1 {
+    0%, 95% {
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        transform: translate(-51%, -48%);
+    }
+}
+
+@keyframes crack2 {
+    0%, 95% {
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        transform: translate(-49%, -53%);
+    }
+}
